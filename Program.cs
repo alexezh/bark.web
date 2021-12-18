@@ -27,4 +27,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+DbUtils.Create();
+
 app.Run();

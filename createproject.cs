@@ -10,12 +10,13 @@ namespace Bark
 {
   [ApiController]
   [Route("api/[controller]")]
-  public class UsersController : ControllerBase
+  public class CreateProjectController : ControllerBase
   {
     [Route("")]
-    [HttpGet]
-    public async Task<ActionResult> Get()
+    [HttpGet("{id}")]
+    public async Task<ActionResult> Get(string id)
     {
+      DbUtils.CreateProject(id);
       return Ok();
     }
   }
